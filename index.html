@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mudassir Usmani — CV</title>
+<meta name="description" content="Mudassir Usmani — doctoral researcher and electrical engineer working on energy systems, AI and data. University of Vaasa, Finland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#0B1620; --panel:#101F2B; --line:#22394A; --line-strong:#3A5466;
+  --text:#EAF0F4; --muted:#9FB3C2; --faint:#6F889A;
+  --accent:#F2B33D; --accent-ink:#1A1205;
+  --sans:'IBM Plex Sans',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--text)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+
+/* header */
+header.hero{border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero svg.net{position:absolute;right:-40px;top:48px;width:560px;height:auto;opacity:.55;pointer-events:none}
+.hero .wrap{position:relative;padding-top:56px;padding-bottom:40px}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+h1{font-size:clamp(34px,6vw,54px);line-height:1.05;margin:0 0 10px;letter-spacing:-.5px;font-weight:600}
+.role{font-size:clamp(18px,2.6vw,22px);color:var(--muted);margin:0 0 22px;max-width:640px}
+.summary{max-width:680px;margin:0 0 26px;color:var(--text)}
+.contacts{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--mono);font-size:14px;margin:0 0 28px;padding:0;list-style:none}
+.contacts a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line-strong)}
+.contacts a:hover{color:var(--accent);border-color:var(--accent)}
+
+.toggle{display:inline-flex;border:1px solid var(--line-strong);border-radius:999px;padding:4px;gap:4px}
+.toggle button{border:0;background:transparent;padding:10px 18px;border-radius:999px;cursor:pointer;color:var(--muted);min-height:44px}
+.toggle button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);font-weight:600}
+.toggle-label{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:1.5px;text-transform:uppercase;margin:0 0 8px}
+
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+.stat{background:var(--ground);padding:16px 18px}
+.stat b{display:block;font-size:26px;font-weight:600;color:var(--accent);line-height:1.1}
+.stat span{font-size:14px;color:var(--muted)}
+
+/* nav + filters */
+.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--ground) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+.bar a{flex:none;font-family:var(--mono);font-size:13px;color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:6px}
+.bar a:hover{color:var(--text);background:var(--panel)}
+
+.filters{padding-top:28px}
+.filters h2{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);font-weight:500;margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line-strong);background:transparent;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--muted);font-size:14px;min-height:40px}
+.chip:hover{color:var(--text);border-color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+.chip .n{font-family:var(--mono);font-size:12px;opacity:.7;margin-left:6px}
+.status{min-height:24px;margin-top:12px;font-size:14px;color:var(--muted)}
+.status button{background:none;border:0;color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:0 4px}
+
+/* sections */
+main{display:flex;flex-direction:column}
+section.block{padding:40px 0 8px;scroll-margin-top:60px}
+.block-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:6px}
+.block-head h2{margin:0;font-size:22px;font-weight:600}
+.block-head .tools{font-family:var(--mono);font-size:13px}
+.block-head .tools button{background:none;border:0;color:var(--muted);cursor:pointer;padding:6px 0;min-height:32px}
+.block-head .tools button:hover{color:var(--accent)}
+
+.entry{border-bottom:1px solid var(--line);transition:opacity .2s}
+.entry.dim{opacity:.32}
+.entry-head{width:100%;display:grid;grid-template-columns:150px minmax(0,1fr) 24px;gap:6px 18px;align-items:start;text-align:left;background:none;border:0;padding:18px 0;cursor:pointer}
+.entry-head:hover .t{color:var(--accent)}
+.when{font-family:var(--mono);font-size:13px;color:var(--faint);padding-top:3px}
+.t{display:block;font-weight:600;font-size:17px;line-height:1.35}
+.org{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+.chev{width:24px;height:24px;color:var(--faint);transition:transform .2s;margin-top:2px}
+.entry-head[aria-expanded="true"] .chev{transform:rotate(180deg);color:var(--accent)}
+.entry-body{padding:0 42px 20px 168px}
+.entry-body ul{margin:0 0 12px;padding-left:18px}
+.entry-body li{margin-bottom:6px}
+.entry-body li::marker{color:var(--accent)}
+.entry-body p{margin:0 0 12px}
+.skilltags{display:flex;flex-wrap:wrap;gap:6px}
+.skilltag{font-family:var(--mono);font-size:12px;border:1px solid var(--line-strong);background:transparent;border-radius:4px;padding:5px 8px;cursor:pointer;color:var(--muted);min-height:30px}
+.skilltag:hover{border-color:var(--accent);color:var(--accent)}
+.badge{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:4px;padding:1px 6px;margin-left:8px;vertical-align:2px;font-weight:500}
+
+.skillgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 32px;padding-top:16px}
+.skillgrid h3{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);font-weight:500;margin:0 0 10px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding-top:16px}
+.card{border:1px solid var(--line);border-radius:8px;padding:16px;background:var(--panel)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:14px}
+
+footer{border-top:1px solid var(--line);margin-top:48px;padding:28px 0 48px;color:var(--faint);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.print-btn{background:none;border:1px solid var(--line-strong);border-radius:6px;color:var(--muted);padding:8px 14px;cursor:pointer;min-height:40px}
+.print-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+@media (max-width:720px){
+  .hero svg.net{width:380px;right:-140px;opacity:.3}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .entry-head{grid-template-columns:minmax(0,1fr) 24px}
+  .when{grid-column:1/-1;order:-1;padding-top:0}
+  .entry-body{padding:0 0 20px}
+  .skillgrid,.cards{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+@media print{
+  :root{--ground:#fff;--panel:#fff;--line:#d5dde3;--line-strong:#b8c4cc;--text:#111;--muted:#444;--faint:#666;--accent:#8a5a00}
+  body{font-size:11pt}
+  .bar,.filters,.toggle,.toggle-label,.tools,.chev,.print-btn,.hero svg.net{display:none!important}
+  .entry.dim{opacity:1}
+  .entry-body{display:block!important;padding-bottom:8px}
+  .entry-head{padding:10px 0 4px}
+  section.block{padding-top:18px;break-inside:auto}
+  .entry{break-inside:avoid}
+  .skilltags{display:none}
+  .hero .wrap{padding-top:0;padding-bottom:16px}
+  .stats{margin-top:16px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="net" viewBox="360 50 580 310" aria-hidden="true">
+    <g fill="none" stroke="#F2B33D" stroke-width="1" stroke-dasharray="3 4" opacity=".45" transform="translate(14,-14)">
+      <path d="M440 110L590 90L740 120L880 100"/>
+      <circle cx="440" cy="110" r="9"/><circle cx="590" cy="90" r="9"/><circle cx="740" cy="120" r="9"/><circle cx="880" cy="100" r="9"/>
+    </g>
+    <g stroke="#3A5466" stroke-width="1.5" fill="none">
+      <path d="M440 110L590 90L740 120L880 100M440 110L740 120M440 110L500 190M590 90L500 190M740 120L800 195M880 100L800 195"/>
+    </g>
+    <g stroke="#2C4252" stroke-width="1" fill="none">
+      <path d="M500 190L420 270M500 190L480 300M500 190L560 280L600 330M420 270L480 300M800 195L720 290M800 195L790 320M800 195L860 280L900 330M720 290L790 320"/>
+    </g>
+    <g fill="#0B1620" stroke="#9FB3C2" stroke-width="2">
+      <circle cx="440" cy="110" r="9"/><circle cx="590" cy="90" r="9"/><circle cx="740" cy="120" r="9"/><circle cx="880" cy="100" r="9"/>
+    </g>
+    <g fill="#5E7A8D">
+      <circle cx="420" cy="270" r="4.5"/><circle cx="480" cy="300" r="4.5"/><circle cx="560" cy="280" r="4.5"/><circle cx="600" cy="330" r="4.5"/>
+      <circle cx="720" cy="290" r="4.5"/><circle cx="790" cy="320" r="4.5"/><circle cx="860" cy="280" r="4.5"/><circle cx="900" cy="330" r="4.5"/>
+    </g>
+    <g fill="#F2B33D"><rect x="492" y="182" width="16" height="16"/><rect x="792" y="187" width="16" height="16"/></g>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow">Energy · AI · Data</p>
+    <h1>Mudassir Usmani</h1>
+    <p class="role" id="role"></p>
+    <p class="summary" id="summary"></p>
+    <ul class="contacts" id="contacts"></ul>
+    <p class="toggle-label" id="toggle-label">View this CV as</p>
+    <div class="toggle" role="group" aria-labelledby="toggle-label">
+      <button type="button" data-mode="research">Researcher</button>
+      <button type="button" data-mode="engineering">Engineer</button>
+    </div>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+
+<nav class="bar" aria-label="Sections"><div class="wrap" id="nav"></div></nav>
+
+<div class="wrap">
+  <div class="filters">
+    <h2 id="filters-label">Filter by topic</h2>
+    <div class="chips" id="topics" role="group" aria-labelledby="filters-label"></div>
+    <p class="status" id="status" aria-live="polite"></p>
+  </div>
+  <main id="main"></main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> Mudassir Usmani · Vaasa, Finland</span>
+    <button type="button" class="print-btn" onclick="window.print()">Print / save as PDF</button>
+  </div>
+</footer>
+
+<script>
+/* =========================================================================
+   ALL CV CONTENT LIVES HERE — edit this object to update the site.
+   tags   = topic filters (see TOPICS)
+   skills = must match names in SKILLS so clicking a skill finds the entry
+   ========================================================================= */
+const PROFILE = {
+  research: {
+    role: "Doctoral researcher in energy systems — digital twins, flexibility markets and grid data",
+    summary: "Early-stage researcher working on power-system analysis and computational modelling of dynamic electrical systems. I bridge theory and practice: data-driven models, dynamic simulation and hands-on experimental validation, in cross-functional, multicultural teams."
+  },
+  engineering: {
+    role: "Electrical engineer — installation, testing and commissioning of electrical and energy systems",
+    summary: "Electrical engineer with hands-on experience in installing, testing and commissioning electrical systems, including drawing interpretation, fault diagnostics and compliance checks. Certified in Finnish electrical safety (SFS 6002), at home in lab and field work, and used to collaborating across technical and safety-focused teams."
+  }
+};
+
+const CONTACTS = [
+  { label: "mudassir.usmani@outlook.com", href: "mailto:mudassir.usmani@outlook.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/mudassir9" },
+  { label: "GitHub", href: "https://github.com/usmani-m" },
+  { label: "Google Scholar", href: "https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" }, // TODO: put your Scholar ID
+  { label: "Vaasa, Finland", href: null }
+];
+
+const STATS = [
+  { n: "2", t: "peer-reviewed conference papers" },
+  { n: "4", t: "hackathon & grant awards" },
+  { n: "57 kW", t: "residential PV commissioned" },
+  { n: "5/5", t: "master's thesis grade" }
+];
+
+const TOPICS = {
+  markets:  "Energy markets & flexibility",
+  grids:    "Power systems & grids",
+  data:     "Data & AI",
+  hardware: "Hardware, lab & field",
+  community:"Community & leadership"
+};
+
+const SKILLS = {
+  "Research & modelling": ["Data-driven modelling","Power system analysis","Energy system optimisation","Grid monitoring & measurements","Life-cycle assessment","Machine learning"],
+  "Tools & languages":    ["Python","MATLAB/Simulink","Julia","PSCAD","Typhoon HIL","EPLAN"],
+  "Engineering practice": ["Commissioning & testing","Fault diagnostics","Electrical installation","Lab testing & equipment","Technical drawings & documentation"],
+  "Working with people":  ["Multicultural teamwork","Technical presentations","Communications & events"]
+};
+
+const SECTIONS = {
+  now: { title: "Currently", kind: "cards", items: [
+    { t: "Doctoral research", s: "AI-enhanced digital twins for TSO–DSO coordination, University of Vaasa" },
+    { t: "Heat-pump LCA", s: "Project Researcher — life-cycle assessment of high-temperature heat pumps" },
+    { t: "Open-source dashboard", s: "How the planned Vaasa data center could shape Finnish electricity prices" }
+  ]},
+
+  experience: { title: "Experience", items: [
+    { when: "07.2026 – now", title: "Project Researcher", org: "University of Vaasa", tags:["grids","data"], skills:["Life-cycle assessment","Energy system optimisation","Python"],
+      bullets: ["Conducting a marginal life-cycle assessment (EF3.1 impact method) of high-temperature heat pump (HTHP) configurations for industrial and district energy systems."] },
+    { when: "02.2025 – 12.2025", title: "Research Assistant", org: "University of Vaasa", tags:["markets","data","grids"], skills:["Machine learning","Data-driven modelling","Energy system optimisation","Python","MATLAB/Simulink"],
+      bullets: [
+        "Designed a hybrid HVAC–UPS control strategy compliant with FCR-N requirements, validated through simulation on one year of grid data — published at EEEIC 2026.",
+        "Developed an ML-based dynamic pricing model for EV charging that cut distribution-grid congestion by up to 20% while preserving cost fairness, validated on one year of data — published at CIRED 2025.",
+        "Built optimisation models for participation in ancillary-service markets."
+      ] },
+    { when: "06.2024 – 08.2024", title: "University Intern", org: "University of Vaasa", tags:["data","hardware"], skills:["Data-driven modelling","Grid monitoring & measurements"],
+      bullets: ["Designed a research framework for an IoT-enabled HVAC controller using granular occupancy-count detection to adjust conditioning dynamically, reaching up to 5% energy-efficiency gains."] },
+    { when: "06.2022 – 07.2023", title: "Solar System Deployment Engineer", org: "TechDot Engineering · Islamabad, Pakistan", tags:["hardware","grids"], skills:["Commissioning & testing","Electrical installation","Fault diagnostics","Technical drawings & documentation"],
+      bullets: [
+        "Led installation and commissioning of 7 residential PV systems, 57 kW total capacity.",
+        "Performed electrical testing, including earth-continuity tests, and integrated energy-management systems (EMS)."
+      ] }
+  ]},
+
+  publications: { title: "Publications", items: [
+    { when: "06.2026", title: "Fast Frequency Response from Commercial Buildings: A Hybrid HVAC-UPS Strategy", org: "EEEIC 2026 · Lisbon, Portugal", tags:["markets","grids"], skills:["Energy system optimisation","MATLAB/Simulink","Technical presentations"],
+      bullets: ["M. M. Usmani, E. Doroudchi and H. Laaksonen. 26th International Conference on Environment and Electrical Engineering.", "Presented the work at the conference."] },
+    { when: "2025", title: "Congestion based dynamic pricing for charging of EVs", org: "CIRED 2025 · Geneva, Switzerland", tags:["markets","data"], skills:["Machine learning","Data-driven modelling","Python"],
+      link: { label: "doi:10.1049/icp.2025.2209", href: "https://doi.org/10.1049/icp.2025.2209" },
+      bullets: ["M. M. Usmani, E. Doroudchi and H. Laaksonen. 28th International Conference and Exhibition on Electricity Distribution, pp. 2914–2918."] },
+    { when: "In preparation", badge: "Manuscript", title: "Digital Twins for TSO–DSO Coordination: A Review", org: "Targeting International Journal of Electrical Power & Energy Systems", tags:["grids","markets","data"], skills:["Power system analysis"],
+      bullets: ["Systematic review of around 127 papers on TSO–DSO coordination and digital twins, organised into a unified taxonomy."] }
+  ]},
+
+  projects: { title: "Projects", items: [
+    { when: "02.2025 – 12.2025", title: "Flexipower — Building as a Battery", org: "University of Vaasa · funded by Business Finland Research-to-Business", tags:["markets","data"], skills:["Data-driven modelling","Machine learning","Python","Grid monitoring & measurements"],
+      bullets: [
+        "Analysed FCR-N frequency and demand–supply dynamics using Nord Pool and Fingrid datasets.",
+        "Developed historical prediction models for FCR-N frequency and power injection.",
+        "Designed a dual-loop HVAC power-modulation control strategy (conceptual stage)."
+      ] },
+    { when: "2025", title: "Real-time grid frequency monitoring with Beckhoff EL3453", org: "Hardware data logger", tags:["hardware","grids","data"], skills:["Grid monitoring & measurements","Python","Lab testing & equipment"],
+      bullets: ["Built a real-time grid-frequency data logger (Raspberry Pi, EtherCAT/SOEM) with 5 mHz resolution, 10 mHz accuracy and 1 Hz sampling, streaming data to the cloud via API."] },
+    { when: "2026 – now", badge: "In progress", title: "Vaasa data center & electricity price dashboard", org: "Open-source portfolio project", tags:["data","markets"], skills:["Python","Data-driven modelling","Machine learning"],
+      bullets: ["Dashboard on how Microsoft's planned Vaasa data center could affect Finnish electricity prices: historical demand and production, wind and solar generation from weather data, and prediction models for coming years."] }
+  ]},
+
+  education: { title: "Education", items: [
+    { when: "01.2026 – now", title: "Doctor of Science (Tech.)", org: "University of Vaasa", tags:["grids","markets","data"], skills:["Power system analysis","Energy system optimisation","Data-driven modelling"],
+      bullets: ["Research focus: AI-enhanced digital twin solutions for TSO–DSO coordination in flexibility markets.", "Supervisor: Prof. Hannu Laaksonen."] },
+    { when: "2023 – 2025", title: "Master of Smart Energy", org: "University of Vaasa", tags:["markets","data"], skills:["Machine learning","Python"],
+      bullets: ["Thesis graded 5/5: congestion-based dynamic pricing for EV charging using Bayesian Ridge Regression — published at CIRED 2025."] },
+    { when: "2017 – 2022", title: "Bachelor of Electrical Engineering", org: "Air University · Islamabad, Pakistan", tags:["grids","hardware"], skills:["Power system analysis","Electrical installation"],
+      bullets: [] }
+  ]},
+
+  awards: { title: "Awards & competitions", items: [
+    { when: "2025", title: "Merinova Grant", org: "University of Vaasa", tags:["grids"], skills:[], bullets: [] },
+    { when: "2025", title: "Junction x Vaasa hackathon — Top 3 finalist", org: "Team DrakoNix", tags:["data"], skills:["Multicultural teamwork"], bullets: [] },
+    { when: "2024", title: "8th CASSINI Hackathon for EU Defence and Space — 2nd place", org: "Czechia · Team KokkoNav", tags:["data"], skills:["Multicultural teamwork"], bullets: [] },
+    { when: "2024", title: "NASA Space Apps Challenge — Finland winner, global nominee", org: "Team Lizard", tags:["data"], skills:["Multicultural teamwork"], bullets: [] }
+  ]},
+
+  certs: { title: "Certificates & training", items: [
+    { when: "Certificate", title: "SFS 6002 — Safety at electrical work", org: "Finnish electrical safety", tags:["hardware"], skills:["Lab testing & equipment"],
+      bullets: ["Certification for work with electrical measurement systems and high-voltage equipment."] },
+    { when: "Training", title: "HIL Specialist 2.0", org: "Typhoon HIL", tags:["hardware","grids"], skills:["Typhoon HIL"],
+      bullets: ["Series of 5 courses on the Typhoon HIL toolchain."] },
+    { when: "Training", title: "ACS880 commissioning exercise", org: "ABB University training centre", tags:["hardware"], skills:["Commissioning & testing","Lab testing & equipment"],
+      bullets: ["Hands-on ACS880 drive start-up, commissioning and hardware exploration."] }
+  ]},
+
+  volunteer: { title: "Volunteering", items: [
+    { when: "03.2026 – now", title: "Communications & Event Coordinator", org: "International Committee, Student Union of the University of Vaasa (VYY)", tags:["community"], skills:["Communications & events","Multicultural teamwork"],
+      bullets: [
+        "Started a collaboration with the University of Vaasa Language Centre to launch a peer language-exchange programme.",
+        "Co-manage social media for International Committee events.",
+        "Created \"Guide to Vaasa\", a digital guide for new international students."
+      ] },
+    { when: "2024 & 2025", title: "Crew Member", org: "Vaasa EnergyWeek", tags:["community","grids"], skills:["Communications & events"], bullets: [] },
+    { when: "2019 – 2020", title: "Operation Assistant", org: "Blood Donor Society · Air University", tags:["community"], skills:[], bullets: [] }
+  ]},
+
+  skills: { title: "Skills", kind: "skills" },
+
+  languages: { title: "Languages", kind: "cards", items: [
+    { t: "English", s: "Fluent" }, { t: "Urdu", s: "Native" }, { t: "Finnish", s: "Beginner" }
+  ]}
+};
+
+const ORDER = {
+  research:    ["now","publications","experience","projects","education","awards","skills","certs","volunteer","languages"],
+  engineering: ["now","experience","projects","certs","skills","education","awards","publications","volunteer","languages"]
+};
+
+/* ========================= rendering ========================= */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const store = { get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }, set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} } };
+
+const state = { mode: store.get("cv-mode") === "engineering" ? "engineering" : "research", filter: null };
+const allEntries = () => Object.values(SECTIONS).filter(s => !s.kind).flatMap(s => s.items);
+const chevron = '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+let uid = 0;
+
+function renderHeader(){
+  $("#role").textContent = PROFILE[state.mode].role;
+  $("#summary").textContent = PROFILE[state.mode].summary;
+  document.querySelectorAll(".toggle button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.mode === state.mode)));
+}
+
+function entryHTML(e){
+  const id = "e" + (uid++);
+  const hasBody = e.bullets.length || e.skills.length || e.link;
+  const body = hasBody ? `
+    <div class="entry-body" id="${id}" hidden>
+      ${e.bullets.length ? `<ul>${e.bullets.map(b => `<li>${esc(b)}</li>`).join("")}</ul>` : ""}
+      ${e.link ? `<p><a href="${esc(e.link.href)}" target="_blank" rel="noopener">${esc(e.link.label)}</a></p>` : ""}
+      ${e.skills.length ? `<div class="skilltags">${e.skills.map(s => `<button type="button" class="skilltag" data-skill="${esc(s)}">${esc(s)}</button>`).join("")}</div>` : ""}
+    </div>` : "";
+  return `<article class="entry" data-tags="${esc(e.tags.join(" "))}" data-skills="${esc(e.skills.join("|"))}">
+    <button type="button" class="entry-head" aria-expanded="false" ${hasBody ? `aria-controls="${id}"` : "disabled style=\"cursor:default\""}>
+      <span class="when">${esc(e.when)}</span>
+      <span><span class="t">${esc(e.title)}${e.badge ? `<span class="badge">${esc(e.badge)}</span>` : ""}</span><span class="org">${esc(e.org)}</span></span>
+      ${hasBody ? chevron : "<span></span>"}
+    </button>${body}</article>`;
+}
+
+function sectionHTML(key){
+  const s = SECTIONS[key];
+  let inner = "";
+  if (s.kind === "cards") inner = `<div class="cards">${s.items.map(c => `<div class="card"><b>${esc(c.t)}</b><span>${esc(c.s)}</span></div>`).join("")}</div>`;
+  else if (s.kind === "skills") {
+    const used = {}; allEntries().forEach(e => e.skills.forEach(k => used[k] = (used[k] || 0) + 1));
+    inner = `<div class="skillgrid">${Object.entries(SKILLS).map(([g, list]) => `<div><h3>${esc(g)}</h3><div class="chips">${
+      list.map(k => `<button type="button" class="chip" data-skill="${esc(k)}" aria-pressed="false">${esc(k)}${used[k] ? `<span class="n">${used[k]}</span>` : ""}</button>`).join("")
+    }</div></div>`).join("")}</div>`;
+  } else inner = s.items.map(entryHTML).join("");
+  const tools = s.kind ? "" : `<span class="tools"><button type="button" data-expand="${key}">Expand all</button></span>`;
+  return `<section class="block" id="${key}"><div class="block-head"><h2>${esc(s.title)}</h2>${tools}</div>${inner}</section>`;
+}
+
+function renderBody(){
+  uid = 0;
+  const order = ORDER[state.mode];
+  $("#main").innerHTML = order.map(sectionHTML).join("");
+  $("#nav").innerHTML = order.map(k => `<a href="#${k}">${esc(SECTIONS[k].title)}</a>`).join("");
+  applyFilter();
+}
+
+function renderTopics(){
+  const count = {}; allEntries().forEach(e => e.tags.forEach(t => count[t] = (count[t] || 0) + 1));
+  $("#topics").innerHTML = `<button type="button" class="chip" data-topic="" aria-pressed="true">All</button>` +
+    Object.entries(TOPICS).map(([k, v]) => `<button type="button" class="chip" data-topic="${k}" aria-pressed="false">${esc(v)}<span class="n">${count[k] || 0}</span></button>`).join("");
+}
+
+function setExpanded(article, open){
+  const head = article.querySelector(".entry-head"), body = article.querySelector(".entry-body");
+  if (!body) return;
+  head.setAttribute("aria-expanded", String(open)); body.hidden = !open;
+}
+
+function applyFilter(){
+  const f = state.filter; let n = 0;
+  document.querySelectorAll(".entry").forEach(a => {
+    const match = !f || (f.type === "topic" ? a.dataset.tags.split(" ").includes(f.value) : a.dataset.skills.split("|").includes(f.value));
+    a.classList.toggle("dim", !match);
+    if (f) { setExpanded(a, match); if (match) n++; }
+  });
+  document.querySelectorAll("[data-topic]").forEach(b => b.setAttribute("aria-pressed", String(f ? f.type === "topic" && b.dataset.topic === f.value : b.dataset.topic === "")));
+  document.querySelectorAll(".chip[data-skill]").forEach(b => b.setAttribute("aria-pressed", String(!!f && f.type === "skill" && b.dataset.skill === f.value)));
+  const label = f ? (f.type === "topic" ? TOPICS[f.value] : f.value) : "";
+  $("#status").innerHTML = f ? `Highlighting ${n} item${n === 1 ? "" : "s"} for <strong>${esc(label)}</strong> <button type="button" id="clear">Clear filter</button>` : "";
+}
+
+document.addEventListener("click", ev => {
+  const t = ev.target.closest("button"); if (!t) return;
+  if (t.matches(".toggle button")) { state.mode = t.dataset.mode; store.set("cv-mode", state.mode); renderHeader(); renderBody(); return; }
+  if (t.matches(".entry-head")) { setExpanded(t.closest(".entry"), t.getAttribute("aria-expanded") !== "true"); return; }
+  if (t.dataset.expand) {
+    const sec = document.getElementById(t.dataset.expand), arts = sec.querySelectorAll(".entry");
+    const open = [...arts].some(a => a.querySelector(".entry-head").getAttribute("aria-expanded") !== "true" && a.querySelector(".entry-body"));
+    arts.forEach(a => setExpanded(a, open)); t.textContent = open ? "Collapse all" : "Expand all"; return;
+  }
+  if ("topic" in t.dataset) { const v = t.dataset.topic; state.filter = v && !(state.filter && state.filter.value === v) ? { type: "topic", value: v } : null; applyFilter(); return; }
+  if (t.dataset.skill) {
+    const v = t.dataset.skill; state.filter = state.filter && state.filter.value === v ? null : { type: "skill", value: v }; applyFilter();
+    if (state.filter && t.classList.contains("chip")) document.querySelector(".filters").scrollIntoView({ behavior: "smooth" });
+    return;
+  }
+  if (t.id === "clear") { state.filter = null; applyFilter(); }
+});
+
+window.addEventListener("beforeprint", () => document.querySelectorAll(".entry").forEach(a => setExpanded(a, true)));
+
+$("#contacts").innerHTML = CONTACTS.map(c => `<li>${c.href ? `<a href="${esc(c.href)}"${c.href.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}>${esc(c.label)}</a>` : `<span style="color:var(--muted)">${esc(c.label)}</span>`}</li>`).join("");
+$("#stats").innerHTML = STATS.map(s => `<div class="stat"><b>${esc(s.n)}</b><span>${esc(s.t)}</span></div>`).join("");
+$("#year").textContent = new Date().getFullYear();
+renderHeader(); renderTopics(); renderBody();
+</script>
+</body>
+</html>
